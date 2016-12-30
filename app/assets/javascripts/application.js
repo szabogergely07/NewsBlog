@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.bootstrap-autohidingnavbar
 //= require_tree .
