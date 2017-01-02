@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20170101152801_add_sampletext_to_articles.rb
