@@ -100,7 +100,7 @@
             
             <% end %>
             <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
+            <div class="col-md-4 sidebar">
 
                 <!-- Blog Search Well -->
                 <div class="well">
@@ -122,7 +122,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#"></a>
+                                <li><% @articles.each do |article| %><%= article.category %> <% end %>
                                 </li>
                                 
                             </ul>

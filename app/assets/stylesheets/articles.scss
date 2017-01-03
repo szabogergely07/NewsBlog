@@ -7,3 +7,21 @@
 	height: 420px;
 	overflow: hidden;
 }
+
+@media(max-width: 376px) {
+	.blog-frame {
+		height: 450px;
+	}
+}
+
+@media(max-width: 321px) {
+	.blog-frame {
+		height: 535px;
+	}
+}
+
+.sidebar {
+	position: fixed;
+	float: right;
+	right: 0px;
+}
