@@ -25,3 +25,16 @@
 	float: right;
 	right: 0px;
 }
+
+#new-article {
+	margin-top: 5px;
+
+	a {
+		color: white;
+	}
+
+		:visited, :link {
+			color: white;
+			text-decoration: none;
+		}
+}
