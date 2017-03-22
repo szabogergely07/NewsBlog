@@ -1,27 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
+  <div class="container center-page">
+    
+      <!-- Blog Post Content Column -->
+      <div class="">
 
-<p>
-  <strong>Category:</strong>
-  <%= @article.category %>
-</p>
+          <!-- Blog Post -->
+     
+          <!-- Title -->
+          <h1><%= @article.title %></h1>
 
-<p>
-  <strong>Date:</strong>
-  <%= @article.date %>
-</p>
+          <!-- Author -->
+          <p class="lead">
+              by <a href="#">UserName</a>
+          </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+          <hr>
+
+          <!-- Date/Time -->
+          <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @article.date %></p>
+
+          
+          <hr>
+
+          <!-- Post Content -->
+          <p class="lead"><%= @article.body %> </p>
+
+          <div class="container">
+              <%= link_to 'Edit', edit_article_path(@article) %>
+              <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        
+          <hr>
+
+      </div>
+
+  </div>
+
 
 
  <!-- Blog Comments -->
@@ -79,3 +96,4 @@
                         <!-- End Nested Comment -->
                     </div>
                 </div>
+</div>
