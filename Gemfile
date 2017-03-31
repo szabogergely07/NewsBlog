@@ -56,3 +56,5 @@ gem 'jquery-rails', '~> 4.2', '>= 4.2.2'
 gem 'bootstrap-autohidingnavbar-rails'
 
 gem 'devise'
+
+gem 'cancancan', '~> 1.10'
