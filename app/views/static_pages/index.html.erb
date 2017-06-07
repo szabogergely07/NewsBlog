@@ -9,7 +9,7 @@
             <button type="submit" class="btn btn-primary" id="new-article"><%= link_to 'Create New Article', new_article_path %></button>
           </div>
 
-          <% @articles.each do |article| %>
+          <% @articles.take(2).each do |article| %>
 
             <!-- Blog Post Content Column -->
             <div class="col-lg-8 blog-frame">
