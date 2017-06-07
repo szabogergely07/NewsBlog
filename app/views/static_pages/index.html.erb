@@ -73,10 +73,8 @@
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
                                 <li>
-                                  <% @articles.each do |article| %>
-                                    <% art_array = [] %>
-                                    <% art_array << article.category %>
-                                    <%= art_array.uniq %>
+                                   <% @articles.each do |article| %>
+                                    <%= raw(article.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
                                   <% end %>
                                 </li>
                                 
