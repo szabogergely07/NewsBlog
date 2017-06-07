@@ -6,11 +6,10 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order(date: :desc)
     if params[:tag]
       @articles = Article.tagged_with(params[:tag])
     else
-      @articles = Article.all
+      @articles = Article.all.order(date: :desc)
     end
 
   end
