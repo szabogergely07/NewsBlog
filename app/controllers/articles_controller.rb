@@ -8,10 +8,16 @@ class ArticlesController < ApplicationController
   def index
     if params[:tag]
       @articles = Article.tagged_with(params[:tag])
+    elsif params[:q]
+      search_term = params[:q]
+      if Rails.env.development?
+        @articles = Article.where("body LIKE ?", "%#{search_term}%")
+      else
+        @articles = Article.where("body ilike ?", "%#{search_term}%")
+      end
     else
       @articles = Article.all.order(date: :desc)
     end
-
   end
 
   # GET /articles/1
