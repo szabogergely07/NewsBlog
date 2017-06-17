@@ -1,18 +1,23 @@
-<div class="container">
-	<h1>BlogNews Today</h1>
-	<h3>Read our newest blogs below</h3>
+<div class="container head-title img-responsive">
+  <h1>NewsBlog Today</h1>
+  <h3>Read our newest blogs below</h3>
+</div>
 
+<div class="container">
+	
 	<div class="container">
 
         <div class="row">
+         <% if signed_in? && current_user.admin? %>
           <div class="container">
             <button type="submit" class="btn btn-primary" id="new-article"><%= link_to 'Create New Article', new_article_path %></button>
           </div>
+          <% end %>
 
           <% @articles.take(2).each do |article| %>
 
             <!-- Blog Post Content Column -->
-            <div class="col-lg-8 blog-frame">
+            <div class="col-lg-8 blog-frame article-back" style="background-image: url(<%= asset_path 'trial.jpg' %>); background-repeat: no-repeat; filter: grayscale(60%)">
 
                 <!-- Blog Post -->
               
