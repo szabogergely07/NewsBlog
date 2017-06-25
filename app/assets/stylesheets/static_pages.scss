@@ -16,7 +16,7 @@ body {
 }
 
 .blog-frame {
-	background-image: url(trial.jpg);
+	background: asset_url('trial.jpg');
 	background-repeat: no-repeat;
 	filter: brightness(70%);
 }
