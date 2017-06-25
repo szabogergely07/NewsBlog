@@ -10,7 +10,7 @@ body {
 .head-title {
 	width: 100%;
 	height: 500px;
-	background-image: url(blog.jpg);
+	background: asset_url('blog.jpg');
 	background-repeat: no-repeat;
 
 }
