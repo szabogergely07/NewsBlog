@@ -17,7 +17,7 @@
           <% @articles.take(2).each do |article| %>
 
             <!-- Blog Post Content Column -->
-            <div class="col-lg-8 blog-frame article-back" style="background-image: url(<%= asset_path 'trial.jpg' %>); background-repeat: no-repeat; filter: grayscale(60%)">
+            <div class="col-lg-8 blog-frame">
 
                 <!-- Blog Post -->
               
@@ -54,7 +54,9 @@
 
             
             <% end %>
+          <div class="side">
            <%= render partial: "articles/tag_form", locals: {article:@article} %>
+          </div>
         </div>
         <!-- /.row -->
 </div>
