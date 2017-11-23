@@ -25,7 +25,7 @@
       <div class="container">
         <div class="header">
           <div class="logo">
-            <a href="<%= static_pages_index_path %>" class: "img-responsive"> <%= image_tag("logo.png")%> </a>
+            <a href="<%= static_pages_index_path %>"> <%= image_tag("newsblog-logo2.jpg", class: "img-responsive") %> </a>
           </div>
         <div class="header-right">
           <ul>
@@ -67,9 +67,7 @@
         </li>
         <li>
           <% if signed_in? && current_user.admin? %>
-          <div class="container">
-            <button type="submit" class="btn btn-primary" id="new-article"><%= link_to 'Create New Article', new_article_path %></button>
-          </div>
+            <%= link_to 'Create New Article', new_article_path %>
           <% end %>
         </li>
           <div class="clearfix"> </div>
