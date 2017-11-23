@@ -5,23 +5,27 @@
               <!-- These are our grid blocks -->
               <li>
             <div class="l_g">
+             <% @articles.take(3).each do |article| %> 
               <div class="col-md-3 praesent">
                 <div class="l_g_r">
                   <div class="dapibus">
-                    <h2>Praesent dapibusneque id cursus faucioibus tortor neque tiegetas augue</h2>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
+                    <h2><%= article.title %></h2>
+                    <p class="adm">Posted by <a href="#">Admin</a>  |  on <%= article.date %></p>
                     <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate. </p>
-                    <a href="details.html" class="link">Read More</a>
+                    <p><%= article.body.first(200) %>(...) 
+                    </p>
+                    <%= link_to 'Read more...', article, class: "link" %>
                   </div>
                 </div>
               </div>
-              <div class="col-md-3 integ">
+            <% end %>
+
+              <!-- <div class="col-md-3 integ">
                 <div class="l_g_r">
                   <div class="integer">
                     <h3>Integer vitae libero ac risus egestas</h3>
                     <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href="details.html"><img src="" class="img-responsive" alt=""></a>
+                    <a href=""><img src="" class="img-responsive" alt=""></a>
                     <p>Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel ipsum dolor.</p>
                     <a href="" class="link">Read More</a>
                   </div>
@@ -37,7 +41,7 @@
                     <a href="" class="link">Read More</a>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="col-md-3 integ">
                 <div class="l_g_r">
                   <div class="posts">
@@ -67,8 +71,31 @@
               <div class="clearfix"></div>
             </div>
           </li>
+          <!-- First 3 and Archives end -->
+
+
            <li>
             <div class="l_g">
+             <% @articles[3..5].each do |article| %> 
+              <div class="col-md-3 integ">
+                <div class="l_g_r">
+                  <div class="integer">
+                    <h2><%= article.title %></h2>
+                    <p class="adm">Posted by <a href="#">Admin</a>  |  on <%= article.date %></p>
+                    <a href=""><img src="" class="img-responsive" alt=""></a>
+                    <p><%= article.body.first(200) %>(...) 
+                    </p>
+                    <%= link_to 'Read more...', article, class: "link" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+
+
+
+
+            <!-- <div class="l_g">
               <div class="col-md-3 praesent">
                 <div class="l_g_r">
                   <div class="dapibus">
@@ -100,7 +127,7 @@
                     <a href="" class="link">Read More</a>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="col-md-3 integ">
                 <div class="l_g_r">
                   <div class="categories">
@@ -118,17 +145,31 @@
      
            <li>
             <div class="l_g">
-              <div class="col-md-3 praesent">
+               <div class="l_g">
+             <% @articles[6..-1].each do |article| %> 
+              <div class="col-md-4 praesent">
                 <div class="l_g_r">
                   <div class="dapibus">
-                    <h2>Praesent dapibusneque id cursus faucioibus tortor neque tiegetas augue</h2>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
+                    <h2><%= article.title %></h2>
+                    <p class="adm">Posted by <a href="#">Admin</a>  |  on <%= article.date %></p>
                     <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate. </p>
-                    <a href="" class="link">Read More</a>
+                    <p><%= article.body.first(200) %>(...) 
+                    </p>
+                    <%= link_to 'Read more...', article, class: "link" %>
                   </div>
                 </div>
               </div>
+              <% end %>
+              <div class="col-md-3 integ">
+                <div class="l_g_r">
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              </div>
+            </div>
+          </li>
+
+            <!-- 
               <div class="col-md-3 integ">
                 <div class="l_g_r">
                   <div class="vitae">
@@ -247,7 +288,7 @@
             </div>
           </li>
           <div class="clearfix"></div>
-       
+        -->
             </ul>
           <div id="loadMore">Load more</div>
   <div id="showLess">Show less</div>
