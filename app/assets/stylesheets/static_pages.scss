@@ -2,34 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-	margin-top: 50px;
-	margin-bottom: 60px;
-}
-
-.head-title {
-	width: 100%;
-	height: 500px;
-	background: asset_url('blog.jpg');
-	background-repeat: no-repeat;
-
-}
-
-.blog-frame {
-	background: asset_url('trial.jpg');
-	background-repeat: no-repeat;
-	filter: brightness(70%);
-}
-
-.blog-frame:hover {
-	filter: brightness(90%);
-}
-
-.lead {
-	color: white;
-}
-
-.side {
-	position: relative;
-	top: -450px;
-}
