@@ -11,9 +11,11 @@ class ArticlesController < ApplicationController
     elsif params[:q]
       search_term = params[:q]
       if Rails.env.development?
-        @articles = Article.where("body LIKE ?", "%#{search_term}%")
+        @articles = Article.where("body LIKE ?", "%#{search_term}%") \
+        | Article.tagged_with("%#{params[:q]}%")
       else
-        @articles = Article.where("body ilike ?", "%#{search_term}%")
+        @articles = Article.where("body ilike ?", "%#{search_term}%") \
+        | Article.tagged_with("%#{params[:q]}%")
       end
     else
       @articles = Article.all.order(date: :desc)

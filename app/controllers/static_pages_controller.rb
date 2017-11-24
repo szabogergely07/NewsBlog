@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
-  	# @articles = Article.limit(2)
+  	# @articles = Article.all.order(date: :desc)
   	if params[:tag]
       @articles = Article.tagged_with(params[:tag])
     else
