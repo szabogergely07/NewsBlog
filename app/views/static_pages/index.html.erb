@@ -15,33 +15,18 @@
                     <p><%= article.body.first(200) %>(...) 
                     </p>
                     <%= link_to 'Read more...', article, class: "link" %>
+                   <br>
+                    <% if signed_in? && current_user.admin? %>
+                    <%= link_to 'Edit', edit_article_path(article) %>
+                    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                    
                   </div>
                 </div>
               </div>
             <% end %>
 
-              <!-- <div class="col-md-3 integ">
-                <div class="l_g_r">
-                  <div class="integer">
-                    <h3>Integer vitae libero ac risus egestas</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel ipsum dolor.</p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                  <div class="dapibus">
-                    <h3>Integer vitae libero risus egestas</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilis</p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div> -->
+            
               <div class="col-md-3 integ">
                 <div class="l_g_r">
                   <div class="posts">
@@ -71,8 +56,8 @@
               <div class="clearfix"></div>
             </div>
           </li>
-          <!-- First 3 and Archives end -->
-
+         
+           <!----//--->
 
            <li>
             <div class="l_g">
@@ -86,6 +71,11 @@
                     <p><%= article.body.first(200) %>(...) 
                     </p>
                     <%= link_to 'Read more...', article, class: "link" %>
+                    <br>
+                    <% if signed_in? && current_user.admin? %>
+                    <%= link_to 'Edit', edit_article_path(article) %>
+                    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -95,39 +85,6 @@
 
 
 
-            <!-- <div class="l_g">
-              <div class="col-md-3 praesent">
-                <div class="l_g_r">
-                  <div class="dapibus">
-                    <h3>CURSUS FAUCIO</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla. </p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                  <div class="integer">
-                    <h3>Aliquam tincidunt mauris eu risus</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                  <div class="lorem">
-                    <h3>Lorem ipsum dolor</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <iframe src=""></iframe>
-                    <p>Pellentesque odio nisi, euismod in, pharetra a, ultricies in.</p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div> -->
               <div class="col-md-3 integ">
                 <div class="l_g_r">
                   <div class="categories">
@@ -142,7 +99,7 @@
               <div class="clearfix"></div>
             </div>
           </li>
-     
+         <!----//--->
            <li>
             <div class="l_g">
                <div class="l_g">
@@ -156,6 +113,11 @@
                     <p><%= article.body.first(200) %>(...) 
                     </p>
                     <%= link_to 'Read more...', article, class: "link" %>
+                    <br>
+                    <% if signed_in? && current_user.admin? %>
+                    <%= link_to 'Edit', edit_article_path(article) %>
+                    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -169,129 +131,13 @@
             </div>
           </li>
 
-            <!-- 
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                  <div class="vitae">
-                    <h3>Integer vitae libero risus egestas</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Sed adipiscing ornare risus. Morbi est est, blandit sit amet</p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-md-3 praesent">
-                <div class="l_g_r">
-                  <div class="integer">
-                    <h3>Praesent dapibusn id cursus</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate. </p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </li>
-       
-                <li>
-            <div class="l_g">
-              <div class="col-md-3 praesent">
-                <div class="l_g_r">
-                  <div class="dapibus">
-                    <h2>Praesent dapibusneque id cursus faucioibus tortor neque tiegetas augue</h2>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate. </p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                  <div class="vitae">
-                    <h3>Integer vitae libero risus egestas</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Sed adipiscing ornare risus. Morbi est est, blandit sit amet</p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-md-3 praesent">
-                <div class="l_g_r">
-                  <div class="integer">
-                    <h3>Praesent dapibusn id cursus</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate. </p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </li>
-           <li>
-            <div class="l_g">
-              <div class="col-md-3 praesent">
-                <div class="l_g_r">
-                  <div class="dapibus">
-                    <h2>Praesent dapibusneque id cursus faucioibus tortor neque tiegetas augue</h2>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate. </p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                  <div class="vitae">
-                    <h3>Integer vitae libero risus egestas</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Sed adipiscing ornare risus. Morbi est est, blandit sit amet</p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-md-3 praesent">
-                <div class="l_g_r">
-                  <div class="integer">
-                    <h3>Praesent dapibusn id cursus</h3>
-                    <p class="adm">Posted by <a href="#">Admin</a>  |  7 days ago</p>
-                    <a href=""><img src="" class="img-responsive" alt=""></a>
-                    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate. </p>
-                    <a href="" class="link">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 integ">
-                <div class="l_g_r">
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </li>
+            
           <div class="clearfix"></div>
-        -->
-            </ul>
+      
+               <!----//---> 
+        </ul>
           <div id="loadMore">Load more</div>
-  <div id="showLess">Show less</div>
+          <div id="showLess">Show less</div>
 
           </div>
   </div>
@@ -307,70 +153,3 @@
 
 
 
-
-
-
-<div class="container head-title img-responsive">
-  <h1>NewsBlog Today</h1>
-  <h3>Read our newest blogs below</h3>
-</div>
-
-<div class="container">
-  
-  <div class="container">
-
-        <div class="row">
-         <% if signed_in? && current_user.admin? %>
-          <div class="container">
-            <button type="submit" class="btn btn-primary" id="new-article"><%= link_to 'Create New Article', new_article_path %></button>
-          </div>
-          <% end %>
-
-          <% @articles.take(2).each do |article| %>
-
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-8 blog-frame">
-
-                <!-- Blog Post -->
-              
-                <!-- Title -->
-                <h1><%= article.title %></h1>
-
-                <!-- Author -->
-                <p class="lead">
-                    by <a href="#">UserName</a>
-                </p>
-
-                <hr>
-
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= article.date %></p>
-
-                
-                <hr>
-
-                <!-- Post Content -->
-                <p class="lead"><%= article.body.first(400) %>(...) <%= link_to 'Read more...', article %></p>
-
-                <div class="container">
-                    <%= link_to 'Show', article %>
-                    <%= link_to 'Edit', edit_article_path(article) %>
-                    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </div>
-
-                <hr>
-
-               
-
-            </div>
-
-            
-            <% end %>
-          <div class="side">
-           <%= render partial: "articles/tag_form", locals: {article:@article} %>
-          </div>
-        </div>
-        <!-- /.row -->
-</div>
-
-</div>
