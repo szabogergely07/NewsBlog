@@ -30,7 +30,7 @@
               <div class="col-md-3 integ">
                 <div class="l_g_r">
                   <div class="posts">
-                    <h4>Recent posts</h4>
+                    <h4>Most viewed posts</h4>
                     <h6><a href="#">Aliquam tincidunt mauris</a></h6>
                     <h6><a href="#">Vestibulum auctor lipsum</a></h6>
                     <h6><a href="#">Nunc dignissim risus</a></h6>
@@ -89,10 +89,15 @@
                 <div class="l_g_r">
                   <div class="categories">
                     <h4>Categories</h4>
-                    <h6><a href="#">Vivamus vestibulum nulla</a></h6>
-                    <h6><a href="#">Integer vitae libero ac risus e</a></h6>
-                    <h6><a href="#">Vestibulum commo</a></h6>
-                    <h6><a href="#">Cras iaculis ultricies</a></h6>
+                    <ul class="list-unstyled">
+                      <li>
+                        <% @articles.each do |article| %>
+                          <%= raw(article.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %>
+                        <% end %>
+
+                      </li>
+                                
+                    </ul>
                   </div>
                 </div>
               </div>
