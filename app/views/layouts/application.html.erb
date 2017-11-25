@@ -56,21 +56,20 @@
     <div class="head-nav">
       <span class="menu"> </span>
       <ul class="cl-effect-15">
-      <li class="active"><a href="<%= static_pages_index_path %>">HOME</a></li>
-        <li><a href="about.html" data-hover="ABOUT">ABOUT</a></li>
-        <li><%= link_to 'Articles', articles_path %></li>
-        <li><a href="contact.html" data-hover="CONTACT">CONTACT</a></li>
+      <li class="active"><%= link_to "HOME", static_pages_index_path, {"data-hover": "HOME"} %></li>
+        <li><%= link_to "ABOUT", static_pages_about_path, {"data-hover": "ABOUT"} %></li>
+        <li><%= link_to "CONTACT", static_pages_contact_path, {"data-hover": "CONTACT"} %></li>
         <li>
           <% if user_signed_in? %>
-          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          <%= link_to "LOGOUT", destroy_user_session_path, {:method => :delete, "data-hover": "LOGOUT"} %>
           <% else %>
-          <%= link_to('Login', new_user_session_path) %>
-          <%= link_to('Sign Up', new_user_registration_path) %>
+          <%= link_to "LOGIN", new_user_session_path, {"data-hover": "LOGIN"} %>
+          <%= link_to "SIGN UP", new_user_registration_path, {"data-hover": "SIGN UP"} %>
           <% end %>    
         </li>
         <li>
           <% if signed_in? && current_user.admin? %>
-            <%= link_to 'Create New Article', new_article_path %>
+            <%= link_to "Create New Article", new_article_path, {"data-hover": "Create New Article"} %>
           <% end %>
         </li>
           <div class="clearfix"> </div>
