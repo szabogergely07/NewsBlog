@@ -1,53 +1,33 @@
- <div class="container">
-
-        <div class="row">
-          <% if signed_in? && current_user.admin? %>
-          <div class="container">
-            <button type="submit" class="btn btn-primary" id="new-article"><%= link_to 'Create New Article', new_article_path %></button>
-          </div>
-          <% end %>
-          <% @articles.each do |article| %>
-
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-8 blog-frame">
-
-                <!-- Blog Post -->
-              
-                <!-- Title -->
-                <h1><%= article.title %></h1>
-
-                <!-- Author -->
-                <p class="lead">
-                    by <a href="#">UserName</a>
-                </p>
-
-                <hr>
-
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= article.date %></p>
-
-                
-                <hr>
-
-                <!-- Post Content -->
-                <p class="lead"><%= article.body.first(400) %>(...) <%= link_to 'Read more...', article %></p>
-
-                <% if signed_in? && current_user.admin? %>
-                <div class="container">
-                    <%= link_to 'Show', article %>
+<div class="content">
+  <div class="container">
+   
+           <ul id="myList">
+              <!-- These are our grid blocks -->
+              <li>
+            <div class="l_g">
+             <% @articles.each do |article| %> 
+              <div class="col-md-3 praesent">
+                <div class="l_g_r">
+                  <div class="dapibus">
+                    <h2><%= article.title %></h2>
+                    <p class="adm">Posted by <a href="#">Admin</a>  |  on <%= article.date %></p>
+                    <a href=""><img src="" class="img-responsive" alt=""></a>
+                    <p><%= article.body.first(200) %>(...) 
+                    </p>
+                    <%= link_to 'Read more...', article, class: "link" %>
+                   <br>
+                    <% if signed_in? && current_user.admin? %>
                     <%= link_to 'Edit', edit_article_path(article) %>
                     <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                    
+                  </div>
                 </div>
-                <% end %>
-                <hr>
-
-               
-
-            </div>
-
-            
-            <% end %>
-           <%= render partial: "tag_form", locals: {article:@article} %>
-        </div>
-        <!-- /.row -->
-</div>
+              </div>
+           <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+           
