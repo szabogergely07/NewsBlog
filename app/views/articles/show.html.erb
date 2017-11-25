@@ -1,99 +1,77 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
 
-  <div class="container center-page">
-    
-      <!-- Blog Post Content Column -->
-      <div class="">
-
-          <!-- Blog Post -->
-     
-          <!-- Title -->
-          <h1><%= @article.title %></h1>
-
-          <!-- Author -->
-          <p class="lead">
-              by <a href="#">UserName</a>
-          </p>
-
-          <hr>
-
-          <!-- Date/Time -->
-          <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @article.date %></p>
-
-          
-          <hr>
-
-          <!-- Post Content -->
-          <p class="lead"><%= @article.body %> </p>
-
-          <div class="container">
+<div class="details">
+    <div class="container">
+      <div class="det_pic">
+        <img src="" class="img-responsive" alt="">
+      </div>
+      <div class="det_text">
+        <h1><%= @article.title %></h1>
+        <br>
+        <p><%= @article.body %></p>
+      </div>
+      <div class="container">
               <%= link_to 'Edit', edit_article_path(@article) %>
               <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
-        
-          <hr>
-
-      </div>
-
+      <ul class="links">
+               <li><i class="date"> </i><span class="icon_text"><%= @article.date %></span></li>
+               <li><a href="#"><i class="admin"> </i><span class="icon_text">Admin</span></a></li>
+               <li class="last"><a href="#"><i class="permalink"> </i><span class="icon_text">Permalink</span></a></li>
+            </ul>
+          <ul class="links_middle">
+                 <li><a href="#"><i class="title-icon"> </i><span class="icon_text">Lorem Ipsum Dolore</span></a></li>
+               <li><i class="tags"> </i><span class="icon_text"><%= @article.tags %></span></li>
+              </ul>
+          <ul class="links_bottom">
+                <li><a href="#"><i class="comments"> </i><span class="icon_text">5 Comments</span></a></li>
+              <li><i class="views"> </i><span class="icon_text">49</span></li>
+              <li><i class="likes"> </i><span class="icon_text">12</span></li>
+              </ul>
+             
+       <div class="comments1">
+                <h4>COMMENTS</h4>
+                <div class="comments-main">
+                  <div class="col-md-2 cmts-main-left">
+                    <img src="images/avatar.png" alt="">
+                  </div>
+                  <div class="col-md-10 cmts-main-right">
+                    <h5>TOM BROWN</h5>
+                    <p>Vivamus congue turpis in augue pellentesque scelerisque. Pellentesque aliquam laoreet sem nec ultrices. Fusce blandit nunc vehicula massa vehicula tincidunt. Nam venenatis cursus urna sed gravida. Ut tincidunt elit ut quam malesuada consequat. Sed semper purus sit amet lorem elementum faucibus.</p>
+                    <div class="cmts">
+                      <div class="cmnts-left">
+                        <p>On April 14, 2014, 18:01</p>
+                      </div>
+                      <div class="cmnts-right">
+                        <a href="#">Reply</a>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                </div>
+      <div class="lev">
+      <div class="leave">
+        <h4>Leave a comment</h4>
+        </div>
+        <form id="commentform">
+            <label for="author">Name</label>
+            <input id="author" name="author" type="text" value="" size="30" aria-required="true">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" value="" size="30" aria-required="true">
+            <label for="url">Website</label>
+            <input id="url" name="url" type="text" value="" size="30">
+            <label for="comment">Comment</label>
+            <textarea></textarea>
+           <div class="clearfix"></div>
+                 <input name="submit" type="submit" id="submit" value="Send">
+          <div class="clearfix"></div>
+           </form>
+          </div>
+          
+    </div>
   </div>
 
-
-
- <!-- Blog Comments -->
-
-                <!-- Comments Form -->
-                <div class="well">
-                    <h4>Leave a Comment:</h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-
-                <hr>
-
-                <!-- Posted Comments -->
-
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
-
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        <!-- Nested Comment -->
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="http://placehold.it/64x64" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nested Start Bootstrap
-                                    <small>August 25, 2014 at 9:30 PM</small>
-                                </h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-                        <!-- End Nested Comment -->
-                    </div>
-                </div>
-</div>
+   
