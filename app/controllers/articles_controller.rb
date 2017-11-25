@@ -3,6 +3,8 @@ class ArticlesController < ApplicationController
   # before_filter :authenticate_user! 
   load_and_authorize_resource
 
+  impressionist :actions=>[:show]
+
   # GET /articles
   # GET /articles.json
   def index
