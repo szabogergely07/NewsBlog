@@ -11,6 +11,7 @@
                   <div class="dapibus">
                     <h2><%= article.title %></h2>
                     <p class="adm">Posted by <a href="#">Admin</a>  |  on <%= article.date %></p>
+                    <!-- <p>Views:</p> -->
                     <a href=""><img src="" class="img-responsive" alt=""></a>
                     <p><%= article.body.first(200) %>(...) 
                     </p>
@@ -31,12 +32,9 @@
                 <div class="l_g_r">
                   <div class="posts">
                     <h4>Most viewed posts</h4>
-                    <% @articles.each do |article| %> 
-                    <h6><!--  Most viewd item code --></h6>
+                    <% @most_viewed.each do |most| %> 
+                    <h6><%= link_to most.title, most %> (<%= most.impressions_count %>)</h6>
                     <% end %>
-                    <h6><a href="#">Vestibulum auctor lipsum</a></h6>
-                    <h6><a href="#">Nunc dignissim risus</a></h6>
-                    <h6><a href="#">Cras ornare tristiqu</a></h6>
                   </div>
                   <div class="comments">
                     <h4>Recent Comments</h4>
