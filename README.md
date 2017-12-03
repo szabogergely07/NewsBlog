@@ -1,24 +1,14 @@
-# README
+Commercial Rails 5.0 Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# To create this app I used the following tools
 
-Things you may want to cover:
 
-* Ruby version
+* Bootstrap Components & Plug-ins
+* GitHub version control
+* Authentication with Devise
+* Authorization with CanCanCan
+* View count with Impressionist
+* Tagging with Acts-on-taggable
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Homepage: http://www.newsblog.herokuapp.com/
