@@ -11,10 +11,12 @@
         <br>
         <p><%= @article.body %></p>
       </div>
+      <% if signed_in? && current_user.admin? %>
       <div class="container">
               <%= link_to 'Edit', edit_article_path(@article) %>
               <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+      </div>
+      <% end %>
       <ul class="links">
                <li><i class="date"> </i><span class="icon_text"><%= @article.date %></span></li>
                <li><a href="#"><i class="admin"> </i><span class="icon_text">Admin</span></a></li>
